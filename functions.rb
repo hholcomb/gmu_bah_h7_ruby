@@ -68,10 +68,28 @@ end
 # Otherwise, the element is simply the value of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
 def fizzbuzz
+
+  array = Array.new(100)
+
+  for i in 1..100
+
+    if (i % 3 == 0) && (i % 5 == 0)
+       array[i-1] = "FizzBuzz"
+    elsif ( i % 3 == 0 )
+       array[i-1] = "Fizz"
+    elsif ( i % 5 == 0 )
+       array[i-1] = "Buzz"
+    else
+       array[i-1] = i
+    end
+
+  end
+
+   return array
 end
 
 # Uncomment each of these to test your functions
  puts reverse([3,6,'dog']).inspect
  puts histogram('The Quick brown fox').inspect
  puts sum_only_numbers [4, 'foo', [ ], 27, :rain, 3.14]
-# puts fizzbuzz.join("\n")
+ puts fizzbuzz.join("\n")
